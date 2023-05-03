@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  fluent-bit-test:
+    image: fluent/fluent-bit:2.1.2
+    volumes:
+      - ./logs:/logs
+      - ./config:/config
+    command:
+      - /fluent-bit/bin/fluent-bit
+      - -c
+      - /config/fluent-bit.conf
